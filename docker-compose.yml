@@ -1,0 +1,14 @@
+version: '3'
+  
+services:
+  jetty:
+    container_name: slf4gwt_showcase
+    image: jetty:alpine
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+    - ./jetty/webapps:/var/lib/jetty/webapps
+    - ./jetty/wars/:/var/lib/jetty/wars/
+    - ./jetty/etc/:/var/lib/jetty/etc/
+    - ./jetty/home/jetty/:/home/jetty/
